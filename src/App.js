@@ -1,5 +1,6 @@
 import FormComponent from './components/form-component/form-component';
 import Graph from './components/graph-component';
+import AnimatedGraph from './components/animatedGraph';
 
 function App() {
   return (
@@ -7,7 +8,8 @@ function App() {
 
       <FormComponent></FormComponent>
       <p> what the fuck </p>
-      <Graph />
+      {/* <Graph /> */}
+      <AnimatedGraph />
     </div>
   )
 }
