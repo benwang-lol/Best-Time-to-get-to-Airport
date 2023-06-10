@@ -1,3 +1,4 @@
+import './form-component.css';
 import React, { useState } from 'react';
 // import Button from '../button-component/customButton';
 // import {Context as UtilContext } from '../context/util-context';
@@ -13,26 +14,30 @@ const FormComponent = () => {
     };
 
     return (
-        <div>
-            <form className="aaa">
-                <label>ENTER THEM DIGITS </label>
+        <div className="container">
+            <form className="form-bitchh" action="action_page.php">
+                <label className="stay-home" htmlFor="stay-home">Util Value for Staying Home</label>
                 <input 
-                    placeholder="BIATCHHH ENTER THAT HOMEADATA"
+                    className="stay-home"
+                    id="stay-home"
+                    placeholder="Utils for Staying Home"
                     type="number"
                     value={homeData}
                     onChange={(event) => setHomeData(event.target.value)}
-            />
-            </form>
-            <form className="bbb">
-                <label>ENTER THOSE DIGITS AGAINNN</label>
+                />
+                <label className="miss-flight" htmlFor="miss-flight">Util Cost for Missing Flight</label>
                 <input 
-                    placeholder="YURR ENTER MF DATA"
+                    className="miss-flight"
+                    id="miss-flight"
+                    placeholder="Utils for Missing Flight"
                     type="number"
                     value={missFlightData}
                     onChange={(event) => setMissFlightData(event.target.value)}
-            />
+                />
             </form>
-            <button type="submit" onClick={handleSubmit}>SUBMIT THAT SHIII</button>
+
+            {/* <button type="submit" onClick={handleSubmit}>Submit</button> */}
+            <input type="submit" value="Submit" onClick={handleSubmit}/>
             
         </div>
     )
