@@ -1,31 +1,40 @@
 import React, { useState } from 'react';
+// import Button from '../button-component/customButton';
+// import {Context as UtilContext } from '../context/util-context';
 
 const FormComponent = () => {
-    const[formData, setFormData] = useState({
-        data: 0
-    });
-
-    const handleChange = (event) => {
-        const { value } = event.target;
-        setFormData((prevData) => ({...prevData, data: value}));
-    }
+    const [homeData, setHomeData] = useState('');
+    const [missFlightData, setMissFlightData] = useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(formData);
-    }
+        console.log(homeData);
+        console.log(missFlightData);
+    };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div>
-                <label># Utils for Staying Home:</label>
-                <input
-                    data={formData.data}
-                    onChange={handleChange}
-                />
-            </div>
-            <button type="submit">Submit THA SHIIII</button>
-        </form>
+        <div>
+            <form className="aaa">
+                <label>ENTER THEM DIGITS </label>
+                <input 
+                    placeholder="BIATCHHH ENTER THAT HOMEADATA"
+                    type="number"
+                    value={homeData}
+                    onChange={(event) => setHomeData(event.target.value)}
+            />
+            </form>
+            <form className="bbb">
+                <label>ENTER THOSE DIGITS AGAINNN</label>
+                <input 
+                    placeholder="YURR ENTER MF DATA"
+                    type="number"
+                    value={missFlightData}
+                    onChange={(event) => setMissFlightData(event.target.value)}
+            />
+            </form>
+            <button type="submit" onClick={handleSubmit}>SUBMIT THAT SHIII</button>
+            
+        </div>
     )
 }
 
