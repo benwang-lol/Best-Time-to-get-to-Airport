@@ -8,7 +8,7 @@ function App() {
   }
   return (
     <div>
-
+      <h1>Learn about the Laffer Curve !!</h1>
       <FormComponent></FormComponent>
       <p> what the fuck </p>
       <button onClick={func}/>

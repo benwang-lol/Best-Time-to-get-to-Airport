@@ -1,6 +1,7 @@
 import React from 'react';
 import { Line, Chart } from 'react-chartjs-2';
 import { Chart as ChartJS } from 'chart.js/auto';
+import './airport-graph-component.css';
 
 const Graph = ({data1, data2}) => {
   // Generate data points for the equation y = x^2
@@ -25,13 +26,13 @@ const Graph = ({data1, data2}) => {
     if (x === 0) {
         risk = 1;
     } else {
-        risk = risk * 0.50;
+        risk = risk * 0.25;
     }
     //assign a percent risk for missing the flight for each x
 
     console.log(risk);
 
-    const y = (x * data1) + (risk * data2);
+    const y = (x * -data1) + (risk * (-data2));
     data.labels.push(x);
     data.datasets[0].data.push(y);
   }
