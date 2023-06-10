@@ -17,7 +17,7 @@ const AnimatedGraph = () => {
 
   useEffect(() => {
     const animateGraph = () => {
-      let x = -10;
+      let x = 0;
       const interval = setInterval(() => {
         if (x > 10) {
           clearInterval(interval);

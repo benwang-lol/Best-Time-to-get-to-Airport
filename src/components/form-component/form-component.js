@@ -1,5 +1,6 @@
 import './form-component.css';
 import React, { useState } from 'react';
+import Graph from '../airport-graph/airport-graph-component';
 // import Button from '../button-component/customButton';
 // import {Context as UtilContext } from '../context/util-context';
 
@@ -38,7 +39,7 @@ const FormComponent = () => {
 
             {/* <button type="submit" onClick={handleSubmit}>Submit</button> */}
             <input type="submit" value="Submit" onClick={handleSubmit}/>
-            
+            <Graph data1={homeData} data2={missFlightData} />
         </div>
     )
 }
