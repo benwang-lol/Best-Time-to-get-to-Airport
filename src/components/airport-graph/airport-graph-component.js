@@ -1,6 +1,7 @@
 import React from 'react';
 import { Line, Chart } from 'react-chartjs-2';
 import { Chart as ChartJS } from 'chart.js/auto';
+import OptimalHour from '../literally-a-sentence/optimal-hour-sentence';
 import './airport-graph-component.css';
 
 const Graph = ({data1, data2}) => {
@@ -9,7 +10,7 @@ const Graph = ({data1, data2}) => {
     labels: [],
     datasets: [
       {
-        label: 'y = x^2',
+        label: 'Hours Early vs. Net Utils',
         data: [],
         fill: false,
         borderColor: 'rgb(75, 192, 192)',
@@ -30,14 +31,29 @@ const Graph = ({data1, data2}) => {
     }
     //assign a percent risk for missing the flight for each x
 
-    console.log(risk);
+    // console.log(risk);
 
     const y = (x * -data1) + (risk * (-data2));
     data.labels.push(x);
     data.datasets[0].data.push(y);
   }
 
-  return <Line data={data} />;
+  //now we want to find the PEAK util num 
+  const maxUtil = Math.max(...data.datasets[0].data);
+  let optimalHourIndex = 0;
+  for (let i = 0; i <= data.datasets[0].data.length; i++) {
+    if (data.datasets[0].data[i] === maxUtil) {
+      optimalHourIndex = i;
+    }
+  }
+  const optimalHour = data.labels[optimalHourIndex];
+
+  return (
+    <div>
+      <Line data={data} />
+      <OptimalHour oH={optimalHour} />
+    </div>
+  )
 };
 
 export default Graph;
