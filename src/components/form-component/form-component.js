@@ -38,7 +38,7 @@ const FormComponent = () => {
             </form>
 
             {/* <button type="submit" onClick={handleSubmit}>Submit</button> */}
-            <input type="submit" value="Submit" onClick={handleSubmit}/>
+            {/* <input type="submit" value="Submit" onClick={handleSubmit}/> */}
             <Graph data1={homeData} data2={missFlightData} />
         </div>
     )

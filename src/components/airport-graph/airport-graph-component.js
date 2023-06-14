@@ -13,8 +13,11 @@ const Graph = ({data1, data2}) => {
         label: 'Hours Early vs. Net Utils',
         data: [],
         fill: false,
-        borderColor: 'rgb(75, 192, 192)',
-        tension: 0.1
+        borderColor: '#0047AB',
+        // borderColor: 'rgb(75, 192, 192)',
+        tension: 0.3,
+        backgroundColor: 'transparent',
+        pointBorderWidth: 0
       }
     ]
   };
